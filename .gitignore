@@ -1,0 +1,27 @@
+# data (large, don't commit — team pulls fresh via download_data.sh)
+data/raw/
+data/processed/
+*.npz
+*.h5
+*.hdf5
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.env/
+*.egg-info/
+
+# experiment artifacts
+runs/
+checkpoints/
+*.pt
+*.pth
+wandb/
+mlruns/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

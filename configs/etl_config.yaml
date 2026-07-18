@@ -1,0 +1,28 @@
+# ETL / preprocessing configuration
+data:
+  sampling_rate: 100          # Hz — use records100/ (low-res). Set 500 for records500/
+  signal_length: 1000         # samples per record at 100Hz (10s recordings)
+  n_leads: 12
+
+filtering:
+  bandpass_low_hz: 0.5
+  bandpass_high_hz: 40.0
+  filter_order: 3
+  notch_hz: 50               # powerline noise; use 60 if data collected in a 60Hz-mains region
+
+normalization:
+  method: "zscore"           # per-lead z-score normalization
+
+labels:
+  superclasses: ["NORM", "MI", "STTC", "CD", "HYP"]
+  multi_label: true          # sigmoid multi-label output, not softmax single-label
+
+splits:
+  train_folds: [1, 2, 3, 4, 5, 6, 7, 8]
+  val_fold: 9
+  test_fold: 10
+
+demographics:
+  fields: ["age", "sex", "height", "weight"]
+  compute_bmi: true          # bmi = weight(kg) / (height(m)^2)
+  impute_strategy: "median"  # for missing height/weight (PTB-XL has some NaNs)

@@ -1,0 +1,13 @@
+torch>=2.2
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+h5py
+pyyaml
+tqdm
+wfdb
+torchmetrics
+grad-cam

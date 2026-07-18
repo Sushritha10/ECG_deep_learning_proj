@@ -1,0 +1,23 @@
+name: ecg-project
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pytorch>=2.2
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - h5py
+  - pyyaml
+  - tqdm
+  - jupyter
+  - pip
+  - pip:
+      - wfdb           # PhysioNet waveform reading
+      - torchmetrics
+      - grad-cam       # pytorch-grad-cam, for temporal explainability
